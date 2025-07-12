@@ -57,6 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        gaming: {
+          cyan: "hsl(var(--gaming-cyan))",
+          purple: "hsl(var(--gaming-purple))",
+          gold: "hsl(var(--gaming-gold))",
+          success: "hsl(var(--gaming-success))",
+          warning: "hsl(var(--gaming-warning))",
+          error: "hsl(var(--gaming-error))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
