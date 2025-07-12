@@ -21,6 +21,7 @@ import {
   Copy,
   RotateCcw,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface BuildStat {
   name: string;
