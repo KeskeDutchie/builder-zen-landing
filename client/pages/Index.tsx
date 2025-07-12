@@ -105,9 +105,12 @@ export default function Index() {
               <Button
                 size="sm"
                 className="bg-gaming-cyan hover:bg-gaming-cyan/90"
+                asChild
               >
-                <Plus className="w-4 h-4 mr-2" />
-                New Build
+                <Link to="/build-editor">
+                  <Plus className="w-4 h-4 mr-2" />
+                  New Build
+                </Link>
               </Button>
             </div>
           </div>
