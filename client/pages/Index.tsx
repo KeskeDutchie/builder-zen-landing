@@ -190,8 +190,10 @@ export default function Index() {
                   </CardTitle>
                   <CardDescription>Level {currentBuild.level}</CardDescription>
                 </div>
-                <Button variant="ghost" size="sm">
-                  <Edit3 className="w-4 h-4" />
+                <Button variant="ghost" size="sm" asChild>
+                  <Link to="/build-editor">
+                    <Edit3 className="w-4 h-4" />
+                  </Link>
                 </Button>
               </div>
             </CardHeader>
@@ -241,8 +243,10 @@ export default function Index() {
                   </CardTitle>
                   <CardDescription>Level {targetBuild.level}</CardDescription>
                 </div>
-                <Button variant="ghost" size="sm">
-                  <Edit3 className="w-4 h-4" />
+                <Button variant="ghost" size="sm" asChild>
+                  <Link to="/build-editor">
+                    <Edit3 className="w-4 h-4" />
+                  </Link>
                 </Button>
               </div>
             </CardHeader>
