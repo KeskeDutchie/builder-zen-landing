@@ -173,8 +173,21 @@ export default function BuildEditor() {
   const [build, setBuild] = useState<Build>({
     name: "New Build",
     power: 1,
-    class: "Flamecharm",
-    weaponType: "Medium Weapons",
+    attunements: {
+      Flamecharm: 0,
+      Frostdraw: 0,
+      Thundercall: 0,
+      Galebreathe: 0,
+      Shadowcast: 0,
+      Ironsing: 0,
+      Bloodrend: 0,
+      Attunementless: 0,
+    },
+    weapons: {
+      "Light Weapons": 0,
+      "Medium Weapons": 0,
+      "Heavy Weapons": 0,
+    },
     talents: [],
     mantras: [],
     stats: [
