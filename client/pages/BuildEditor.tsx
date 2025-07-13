@@ -555,11 +555,11 @@ export default function BuildEditor() {
                 </div>
               </div>
 
-              {/* Stats Investment */}
+              {/* Attunement Investment */}
               <div>
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                  <Target className="w-5 h-5 text-gaming-cyan" />
-                  Stats Investment
+                  <Zap className="w-5 h-5 text-gaming-purple" />
+                  Attunement Investment
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {build.stats.map((stat, index) => (
