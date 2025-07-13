@@ -187,7 +187,6 @@ export default function BuildEditor() {
       Shadowcast: 0,
       Ironsing: 0,
       Bloodrend: 0,
-      Attunementless: 0,
     },
     weapons: {
       "Light Weapons": 0,
