@@ -304,7 +304,7 @@ export default function BuildEditor() {
     const maxAttunement = Object.entries(build.attunements).reduce((a, b) =>
       a[1] > b[1] ? a : b,
     );
-    return maxAttunement[1] > 0 ? maxAttunement[0] : "Attunementless";
+    return maxAttunement[1] > 0 ? maxAttunement[0] : "No Attunement";
   };
 
   return (
