@@ -311,7 +311,9 @@ export default function Index() {
                 <div>
                   <CardTitle className="flex items-center gap-2">
                     {targetBuild.name}
-                    <Badge variant="secondary">{targetBuild.class}</Badge>
+                    <Badge variant="secondary">
+                      {targetBuild.primaryAttunement}
+                    </Badge>
                   </CardTitle>
                   <CardDescription>Power {targetBuild.power}</CardDescription>
                 </div>
