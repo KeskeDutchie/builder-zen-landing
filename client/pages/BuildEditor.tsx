@@ -246,7 +246,7 @@ export default function BuildEditor() {
                 <Slider
                   value={[build.level]}
                   onValueChange={([value]) => updateLevel(value)}
-                  max={100}
+                  max={20}
                   min={1}
                   step={1}
                   className="w-full"
