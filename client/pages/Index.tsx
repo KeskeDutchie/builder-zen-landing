@@ -41,28 +41,28 @@ export default function Index() {
   const [currentBuild, setCurrentBuild] = useState<Build>({
     name: "My Current Build",
     level: 42,
-    class: "Warrior",
+    class: "Flamecharm",
     stats: [
-      { name: "Strength", current: 85, target: 120, max: 150 },
-      { name: "Dexterity", current: 45, target: 60, max: 150 },
-      { name: "Intelligence", current: 30, target: 25, max: 150 },
-      { name: "Vitality", current: 70, target: 100, max: 150 },
-      { name: "Defense", current: 65, target: 95, max: 150 },
-      { name: "Magic Resist", current: 40, target: 50, max: 150 },
+      { name: "Strength", current: 85, target: 100, max: 100 },
+      { name: "Fortitude", current: 45, target: 75, max: 100 },
+      { name: "Agility", current: 30, target: 40, max: 100 },
+      { name: "Intelligence", current: 70, target: 100, max: 100 },
+      { name: "Willpower", current: 65, target: 90, max: 100 },
+      { name: "Charisma", current: 15, target: 25, max: 100 },
     ],
   });
 
   const [targetBuild, setTargetBuild] = useState<Build>({
-    name: "Optimal DPS Build",
+    name: "Optimal Flamecharm Build",
     level: 60,
-    class: "Warrior",
+    class: "Flamecharm",
     stats: [
-      { name: "Strength", current: 120, target: 120, max: 150 },
-      { name: "Dexterity", current: 60, target: 60, max: 150 },
-      { name: "Intelligence", current: 25, target: 25, max: 150 },
-      { name: "Vitality", current: 100, target: 100, max: 150 },
-      { name: "Defense", current: 95, target: 95, max: 150 },
-      { name: "Magic Resist", current: 50, target: 50, max: 150 },
+      { name: "Strength", current: 100, target: 100, max: 100 },
+      { name: "Fortitude", current: 75, target: 75, max: 100 },
+      { name: "Agility", current: 40, target: 40, max: 100 },
+      { name: "Intelligence", current: 100, target: 100, max: 100 },
+      { name: "Willpower", current: 90, target: 90, max: 100 },
+      { name: "Charisma", current: 25, target: 25, max: 100 },
     ],
   });
 
@@ -91,10 +91,10 @@ export default function Index() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold bg-gradient-to-r from-gaming-cyan via-gaming-purple to-gaming-gold bg-clip-text text-transparent">
-                BuildForge
+                Deepwoken Builder
               </h1>
               <p className="text-muted-foreground mt-1">
-                Compare and optimize your game builds
+                Compare and optimize your Deepwoken builds
               </p>
             </div>
             <div className="flex gap-2">
@@ -293,17 +293,19 @@ export default function Index() {
               <div>
                 <h4 className="font-medium mb-2">Priority Stats:</h4>
                 <ul className="space-y-1 text-muted-foreground">
-                  <li>• Focus on Strength first (+35 needed)</li>
-                  <li>• Increase Vitality for survivability (+30)</li>
-                  <li>• Boost Defense for damage reduction (+30)</li>
+                  <li>• Max Intelligence for spell damage (+30 needed)</li>
+                  <li>• Increase Fortitude for health (+30 needed)</li>
+                  <li>
+                    • Boost Willpower for ether and spell scaling (+25 needed)
+                  </li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-medium mb-2">Recommended Actions:</h4>
                 <ul className="space-y-1 text-muted-foreground">
-                  <li>• Farm level 45+ dungeons for XP</li>
-                  <li>• Equip Strength-boosting gear</li>
-                  <li>• Consider respec if over-invested in Intelligence</li>
+                  <li>• Train at Intelligence trainer in Etris</li>
+                  <li>• Use Knowledge tome for stat investment</li>
+                  <li>• Consider using a Shrine of Order to respec</li>
                 </ul>
               </div>
             </div>
