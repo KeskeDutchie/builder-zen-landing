@@ -31,7 +31,7 @@ interface BuildStat {
 
 interface Build {
   name: string;
-  level: number;
+  power: number;
   class: string;
   stats: BuildStat[];
   weaponType?: string;
