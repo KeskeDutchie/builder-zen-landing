@@ -483,7 +483,7 @@ export default function BuildEditor() {
                 Allocate investment points to stats, attunements, and weapons
               </CardDescription>
             </CardHeader>
-                        <CardContent>
+            <CardContent>
               {/* Attunement Investment */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
@@ -494,7 +494,9 @@ export default function BuildEditor() {
                   {attunements.map((attunement) => (
                     <div key={attunement} className="space-y-2">
                       <div className="flex justify-between">
-                        <span className="text-sm font-medium">{attunement}</span>
+                        <span className="text-sm font-medium">
+                          {attunement}
+                        </span>
                         <span className="text-sm text-muted-foreground">
                           {build.attunements[attunement]}
                         </span>
@@ -549,39 +551,40 @@ export default function BuildEditor() {
                   Stats Investment
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {build.stats.map((stat, index) => (
-                  <div key={index} className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <Label className="font-medium">{stat.name}</Label>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-muted-foreground">
-                          {stat.value}
-                        </span>
-                        {getAttunementRecommendations(
-                          getPrimaryAttunement(),
-                        ).includes(stat.name) && (
-                          <Badge
-                            variant="outline"
-                            className="text-xs text-gaming-success border-gaming-success"
-                          >
-                            Recommended
-                          </Badge>
-                        )}
+                  {build.stats.map((stat, index) => (
+                    <div key={index} className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <Label className="font-medium">{stat.name}</Label>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm text-muted-foreground">
+                            {stat.value}
+                          </span>
+                          {getAttunementRecommendations(
+                            getPrimaryAttunement(),
+                          ).includes(stat.name) && (
+                            <Badge
+                              variant="outline"
+                              className="text-xs text-gaming-success border-gaming-success"
+                            >
+                              Recommended
+                            </Badge>
+                          )}
+                        </div>
                       </div>
+                      <Slider
+                        value={[stat.value]}
+                        onValueChange={([value]) => updateStat(index, value)}
+                        max={stat.max}
+                        min={1}
+                        step={1}
+                        className="w-full"
+                      />
+                      <p className="text-xs text-muted-foreground">
+                        {stat.description}
+                      </p>
                     </div>
-                    <Slider
-                      value={[stat.value]}
-                      onValueChange={([value]) => updateStat(index, value)}
-                      max={stat.max}
-                      min={1}
-                      step={1}
-                      className="w-full"
-                    />
-                    <p className="text-xs text-muted-foreground">
-                      {stat.description}
-                    </p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </CardContent>
           </Card>
