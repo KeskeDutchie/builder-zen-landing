@@ -67,6 +67,41 @@ const weaponTypes = [
   "Fist Fighting",
 ];
 
+const sampleTalents = [
+  "Fleet Footed",
+  "Strong Left",
+  "Cheap Shot",
+  "Concussive Force",
+  "Spine Cutter",
+  "Bloodlust",
+  "Rapid Slashes",
+  "Vital Point",
+  "Pressure Point Strike",
+  "Tempo Surge",
+  "Demolition",
+  "Shoulder Throw",
+  "Aerial Combo",
+  "Blade Mastery",
+];
+
+const sampleMantras = [
+  "Flame Grab",
+  "Fire Gun",
+  "Flame Blind",
+  "Flame Wisp",
+  "Grand Fire Eruption",
+  "Fire Forge",
+  "Cremation",
+  "Rising Flame",
+  "Magnet Pull",
+  "Lightning Clones",
+  "Thunder Kick",
+  "Spark Swap",
+  "Grand Javelin",
+  "Voltaic Flash",
+  "Thunder Spear Throw",
+];
+
 const statDescriptions = {
   Strength: "Increases damage with Heavy and Medium weapons, carry load",
   Fortitude: "Increases health points and physical defense",
