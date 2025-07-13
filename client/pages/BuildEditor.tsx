@@ -19,8 +19,17 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowLeft, Save, Share2, Download, Sword } from "lucide-react";
+import {
+  ArrowLeft,
+  Save,
+  Share2,
+  Download,
+  Sword,
+  Clipboard,
+  Check,
+} from "lucide-react";
 import { Link } from "react-router-dom";
+import { Textarea } from "@/components/ui/textarea";
 
 interface BuildStat {
   name: string;
