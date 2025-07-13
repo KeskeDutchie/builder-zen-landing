@@ -201,6 +201,44 @@ export default function Index() {
           </Card>
         </div>
 
+        {/* Build ID Import */}
+        <Card className="mb-8 border-gaming-purple/20">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <ExternalLink className="w-5 h-5 text-gaming-purple" />
+              Import Target Build
+            </CardTitle>
+            <CardDescription>
+              Enter the build ID from the external website to import your target
+              build
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex gap-4">
+              <div className="flex-1">
+                <Label htmlFor="build-id">Build ID</Label>
+                <Input
+                  id="build-id"
+                  value={buildId}
+                  onChange={(e) => setBuildId(e.target.value)}
+                  placeholder="Enter build ID (e.g. abc123def)"
+                  className="mt-1"
+                />
+              </div>
+              <div className="flex items-end">
+                <Button
+                  onClick={handleImportBuild}
+                  disabled={!buildId.trim() || isImporting}
+                  className="bg-gaming-purple hover:bg-gaming-purple/90"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  {isImporting ? "Importing..." : "Import Build"}
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Main Comparison */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Current Build */}
