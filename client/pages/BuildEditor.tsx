@@ -67,7 +67,7 @@ const statDescriptions = {
 export default function BuildEditor() {
   const [build, setBuild] = useState<Build>({
     name: "New Build",
-    level: 1,
+    power: 1,
     class: "Flamecharm",
     weaponType: "Medium Weapons",
     stats: [
