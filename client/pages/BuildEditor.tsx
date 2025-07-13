@@ -266,11 +266,40 @@ export default function BuildEditor() {
         return ["Intelligence", "Willpower", "Charisma"];
       case "Ironsing":
         return ["Intelligence", "Willpower", "Strength"];
+      case "Bloodrend":
+        return ["Intelligence", "Willpower", "Strength"];
       case "Attunementless":
         return ["Strength", "Fortitude", "Agility"];
       default:
         return [];
     }
+  };
+
+  const updateAttunement = (attunement: string, value: number) => {
+    setBuild((prev) => ({
+      ...prev,
+      attunements: {
+        ...prev.attunements,
+        [attunement]: value,
+      },
+    }));
+  };
+
+  const updateWeapon = (weapon: string, value: number) => {
+    setBuild((prev) => ({
+      ...prev,
+      weapons: {
+        ...prev.weapons,
+        [weapon]: value,
+      },
+    }));
+  };
+
+  const getPrimaryAttunement = () => {
+    const maxAttunement = Object.entries(build.attunements).reduce((a, b) =>
+      a[1] > b[1] ? a : b,
+    );
+    return maxAttunement[1] > 0 ? maxAttunement[0] : "Attunementless";
   };
 
   return (
