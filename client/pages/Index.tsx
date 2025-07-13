@@ -262,7 +262,7 @@ export default function Index() {
                 </div>
                 <Button variant="ghost" size="sm" asChild>
                   <Link to="/build-editor">
-                    <Edit3 className="w-4 h-4" />
+                    <Download className="w-4 h-4" />
                   </Link>
                 </Button>
               </div>
