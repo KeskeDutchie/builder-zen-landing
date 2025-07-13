@@ -37,7 +37,7 @@ interface BuildStat {
 interface Build {
   name: string;
   power: number;
-  class: string;
+  primaryAttunement: string;
   stats: BuildStat[];
 }
 
