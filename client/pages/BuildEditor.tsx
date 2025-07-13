@@ -482,8 +482,8 @@ export default function BuildEditor() {
               <CardDescription>
                 Allocate investment points to stats, attunements, and weapons
               </CardDescription>
-            </CardHeader>
-                        <CardContent>
+                        </CardHeader>
+            <CardContent>
               {/* Stats Investment */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
