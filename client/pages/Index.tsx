@@ -42,6 +42,26 @@ interface Build {
 }
 
 export default function Index() {
+  const [buildId, setBuildId] = useState("");
+  const [isImporting, setIsImporting] = useState(false);
+
+  const handleImportBuild = async () => {
+    if (!buildId.trim()) return;
+
+    setIsImporting(true);
+    try {
+      // TODO: Replace with actual API call to external website
+      console.log("Importing build with ID:", buildId);
+      // const response = await fetch(`/api/external-build/${buildId}`);
+      // const buildData = await response.json();
+      // setTargetBuild(buildData);
+    } catch (error) {
+      console.error("Failed to import build:", error);
+    } finally {
+      setIsImporting(false);
+    }
+  };
+
   const [currentBuild, setCurrentBuild] = useState<Build>({
     name: "My Current Build",
     power: 15,
