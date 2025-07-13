@@ -57,6 +57,7 @@ const attunements = [
   "Galebreathe",
   "Shadowcast",
   "Ironsing",
+  "Bloodrend",
   "Attunementless",
 ];
 
