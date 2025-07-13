@@ -20,8 +20,12 @@ import {
   Edit3,
   Copy,
   RotateCcw,
+  Download,
+  ExternalLink,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 interface BuildStat {
   name: string;
