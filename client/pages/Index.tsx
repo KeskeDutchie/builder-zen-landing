@@ -305,11 +305,15 @@ export default function Index() {
                   </CardTitle>
                   <CardDescription>Power {targetBuild.power}</CardDescription>
                 </div>
-                <Button variant="ghost" size="sm" asChild>
-                  <Link to="/build-editor">
-                    <Edit3 className="w-4 h-4" />
-                  </Link>
-                </Button>
+                <div className="flex items-center gap-2">
+                  <Badge
+                    variant="outline"
+                    className="text-xs text-gaming-purple border-gaming-purple"
+                  >
+                    <ExternalLink className="w-3 h-3 mr-1" />
+                    Imported
+                  </Badge>
+                </div>
               </div>
             </CardHeader>
             <CardContent className="space-y-4">
