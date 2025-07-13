@@ -46,6 +46,14 @@ const attunements = [
   "Attunementless",
 ];
 
+const weaponTypes = [
+  "Heavy Weapons",
+  "Medium Weapons",
+  "Light Weapons",
+  "Guns",
+  "Fist Fighting",
+];
+
 const statDescriptions = {
   Strength: "Increases damage with Heavy and Medium weapons, carry load",
   Fortitude: "Increases health points and physical defense",
