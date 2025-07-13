@@ -76,6 +76,23 @@ const statDescriptions = {
 };
 
 export default function BuildEditor() {
+  const [importData, setImportData] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [importSuccess, setImportSuccess] = useState(false);
+
+  const parseDeepwokenData = (data: string) => {
+    // TODO: Implement actual parsing logic for Deepwoken export data
+    console.log("Parsing Deepwoken data:", data);
+    // This would parse the copied data from Deepwoken and extract:
+    // - Stats, Power level, Attunement, Weapon type, Talents, Mantras
+    setIsProcessing(true);
+    setTimeout(() => {
+      setIsProcessing(false);
+      setImportSuccess(true);
+      setTimeout(() => setImportSuccess(false), 2000);
+    }, 1000);
+  };
+
   const [build, setBuild] = useState<Build>({
     name: "New Build",
     power: 1,
