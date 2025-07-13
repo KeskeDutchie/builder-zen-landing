@@ -69,6 +69,7 @@ export default function BuildEditor() {
     name: "New Build",
     level: 1,
     class: "Flamecharm",
+    weaponType: "Medium Weapons",
     stats: [
       {
         name: "Strength",
