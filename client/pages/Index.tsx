@@ -229,7 +229,7 @@ export default function Index() {
                   id="build-id"
                   value={buildId}
                   onChange={(e) => setBuildId(e.target.value)}
-                  placeholder="Enter build ID (e.g. abc123def)"
+                  placeholder="Enter Deepwoken Builder ID (e.g. abc123def)"
                   className="mt-1"
                 />
               </div>
