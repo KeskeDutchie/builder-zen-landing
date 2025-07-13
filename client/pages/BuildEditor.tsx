@@ -238,14 +238,14 @@ export default function BuildEditor() {
 
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <Label htmlFor="level">Level</Label>
+                  <Label htmlFor="power">Power</Label>
                   <span className="text-sm text-muted-foreground">
-                    {build.level}
+                    {build.power}
                   </span>
                 </div>
                 <Slider
-                  value={[build.level]}
-                  onValueChange={([value]) => updateLevel(value)}
+                  value={[build.power]}
+                  onValueChange={([value]) => updatePower(value)}
                   max={20}
                   min={1}
                   step={1}
