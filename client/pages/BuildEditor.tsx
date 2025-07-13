@@ -113,6 +113,8 @@ const statDescriptions = {
 
 export default function BuildEditor() {
   const [importData, setImportData] = useState("");
+  const [checkedTalents, setCheckedTalents] = useState<string[]>([]);
+  const [checkedMantras, setCheckedMantras] = useState<string[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const [importSuccess, setImportSuccess] = useState(false);
 
