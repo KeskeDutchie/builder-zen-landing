@@ -98,6 +98,8 @@ export default function BuildEditor() {
     power: 1,
     class: "Flamecharm",
     weaponType: "Medium Weapons",
+    talents: [],
+    mantras: [],
     stats: [
       {
         name: "Strength",
