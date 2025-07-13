@@ -419,32 +419,6 @@ export default function BuildEditor() {
                 />
               </div>
 
-              <div className="space-y-4">
-                <Label className="text-sm font-medium">
-                  Attunement Investment
-                </Label>
-                {attunements.map((attunement) => (
-                  <div key={attunement} className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-sm font-medium">{attunement}</span>
-                      <span className="text-sm text-muted-foreground">
-                        {build.attunements[attunement]}
-                      </span>
-                    </div>
-                    <Slider
-                      value={[build.attunements[attunement]]}
-                      onValueChange={([value]) =>
-                        updateAttunement(attunement, value)
-                      }
-                      max={100}
-                      min={0}
-                      step={1}
-                      className="w-full"
-                    />
-                  </div>
-                ))}
-              </div>
-
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <Label htmlFor="power">Power</Label>
