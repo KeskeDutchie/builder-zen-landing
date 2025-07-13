@@ -370,9 +370,9 @@ export default function BuildEditor() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center">
                 <div className="text-2xl font-bold text-gaming-cyan">
-                  {build.level}
+                  {build.power}
                 </div>
-                <div className="text-sm text-muted-foreground">Level</div>
+                <div className="text-sm text-muted-foreground">Power</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-gaming-purple">
