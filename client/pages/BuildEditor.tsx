@@ -44,6 +44,8 @@ interface Build {
   class: string;
   stats: BuildStat[];
   weaponType?: string;
+  talents?: string[];
+  mantras?: string[];
 }
 
 const attunements = [
