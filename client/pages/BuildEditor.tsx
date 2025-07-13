@@ -34,6 +34,7 @@ interface Build {
   level: number;
   class: string;
   stats: BuildStat[];
+  weaponType?: string;
 }
 
 const attunements = [
