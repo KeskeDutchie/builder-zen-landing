@@ -484,33 +484,44 @@ export default function BuildEditor() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {/* Attunement Investment */}
+              {/* Stats Investment */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-gaming-purple" />
-                  Attunement Investment
+                  <Target className="w-5 h-5 text-gaming-cyan" />
+                  Stats Investment
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {attunements.map((attunement) => (
-                    <div key={attunement} className="space-y-2">
-                      <div className="flex justify-between">
-                        <span className="text-sm font-medium">
-                          {attunement}
-                        </span>
-                        <span className="text-sm text-muted-foreground">
-                          {build.attunements[attunement]}
-                        </span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {build.stats.map((stat, index) => (
+                    <div key={index} className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <Label className="font-medium">{stat.name}</Label>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm text-muted-foreground">
+                            {stat.value}
+                          </span>
+                          {getAttunementRecommendations(
+                            getPrimaryAttunement(),
+                          ).includes(stat.name) && (
+                            <Badge
+                              variant="outline"
+                              className="text-xs text-gaming-success border-gaming-success"
+                            >
+                              Recommended
+                            </Badge>
+                          )}
+                        </div>
                       </div>
                       <Slider
-                        value={[build.attunements[attunement]]}
-                        onValueChange={([value]) =>
-                          updateAttunement(attunement, value)
-                        }
-                        max={100}
+                        value={[stat.value]}
+                        onValueChange={([value]) => updateStat(index, value)}
+                        max={stat.max}
                         min={0}
                         step={1}
                         className="w-full"
                       />
+                      <p className="text-xs text-muted-foreground">
+                        {stat.description}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -544,7 +555,7 @@ export default function BuildEditor() {
                 </div>
               </div>
 
-              {/* Stats Investment */}
+              {/* Attunement Investment */}
               <div>
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                   <Target className="w-5 h-5 text-gaming-cyan" />
