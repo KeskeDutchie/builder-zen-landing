@@ -273,7 +273,7 @@ export default function BuildEditor() {
         return ["Intelligence", "Willpower", "Strength"];
       case "Bloodrend":
         return ["Intelligence", "Willpower", "Strength"];
-      case "Attunementless":
+      case "No Attunement":
         return ["Strength", "Fortitude", "Agility"];
       default:
         return [];
