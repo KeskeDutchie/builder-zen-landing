@@ -65,7 +65,7 @@ export default function Index() {
   const [currentBuild, setCurrentBuild] = useState<Build>({
     name: "My Current Build",
     power: 15,
-    class: "Flamecharm",
+    primaryAttunement: "Flamecharm",
     stats: [
       { name: "Strength", current: 85, target: 100, max: 100 },
       { name: "Fortitude", current: 45, target: 75, max: 100 },
