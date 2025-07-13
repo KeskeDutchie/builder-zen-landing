@@ -150,8 +150,15 @@ export default function BuildEditor() {
         setBuild((prev) => ({
           ...prev,
           name: "Imported Flamecharm Build",
-          class: "Flamecharm",
           power: 15,
+          attunements: {
+            ...prev.attunements,
+            Flamecharm: 75,
+          },
+          weapons: {
+            ...prev.weapons,
+            "Medium Weapons": 50,
+          },
           talents: ["Bloodlust", "Fleet Footed", "Vital Point"],
           mantras: ["Flame Grab", "Fire Gun", "Rising Flame"],
         }));
