@@ -58,7 +58,6 @@ const attunements = [
   "Shadowcast",
   "Ironsing",
   "Bloodrend",
-  "Attunementless",
 ];
 
 const weaponTypes = [
