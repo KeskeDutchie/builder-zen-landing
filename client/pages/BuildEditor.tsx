@@ -36,65 +36,66 @@ interface Build {
   stats: BuildStat[];
 }
 
-const classes = [
-  "Warrior",
-  "Mage",
-  "Archer",
-  "Assassin",
-  "Paladin",
-  "Necromancer",
+const attunements = [
+  "Flamecharm",
+  "Frostdraw",
+  "Thundercall",
+  "Galebreathe",
+  "Shadowcast",
+  "Ironsing",
+  "Attunementless",
 ];
 
 const statDescriptions = {
-  Strength: "Increases physical damage and carrying capacity",
-  Dexterity: "Improves accuracy, critical hit chance, and movement speed",
-  Intelligence: "Boosts mana pool and magical damage",
-  Vitality: "Increases health points and natural healing",
-  Defense: "Reduces incoming physical damage",
-  "Magic Resist": "Reduces incoming magical damage",
+  Strength: "Increases damage with Heavy and Medium weapons, carry load",
+  Fortitude: "Increases health points and physical defense",
+  Agility: "Increases damage with Light weapons and movement speed",
+  Intelligence: "Increases ether capacity and magic damage",
+  Willpower: "Increases ether regeneration and magic scaling",
+  Charisma: "Increases reputation gain and NPC interactions",
 };
 
 export default function BuildEditor() {
   const [build, setBuild] = useState<Build>({
     name: "New Build",
     level: 1,
-    class: "Warrior",
+    class: "Flamecharm",
     stats: [
       {
         name: "Strength",
-        value: 10,
-        max: 150,
+        value: 0,
+        max: 100,
         description: statDescriptions.Strength,
       },
       {
-        name: "Dexterity",
-        value: 10,
-        max: 150,
-        description: statDescriptions.Dexterity,
+        name: "Fortitude",
+        value: 0,
+        max: 100,
+        description: statDescriptions.Fortitude,
+      },
+      {
+        name: "Agility",
+        value: 0,
+        max: 100,
+        description: statDescriptions.Agility,
       },
       {
         name: "Intelligence",
-        value: 10,
-        max: 150,
+        value: 0,
+        max: 100,
         description: statDescriptions.Intelligence,
       },
       {
-        name: "Vitality",
-        value: 10,
-        max: 150,
-        description: statDescriptions.Vitality,
+        name: "Willpower",
+        value: 0,
+        max: 100,
+        description: statDescriptions.Willpower,
       },
       {
-        name: "Defense",
-        value: 10,
-        max: 150,
-        description: statDescriptions.Defense,
-      },
-      {
-        name: "Magic Resist",
-        value: 10,
-        max: 150,
-        description: statDescriptions["Magic Resist"],
+        name: "Charisma",
+        value: 0,
+        max: 100,
+        description: statDescriptions.Charisma,
       },
     ],
   });
@@ -119,22 +120,24 @@ export default function BuildEditor() {
   };
 
   const totalStatsUsed = build.stats.reduce((sum, stat) => sum + stat.value, 0);
-  const maxPossibleStats = build.level * 5 + 60; // Base 60 + 5 per level
+  const maxPossibleStats = Math.min(build.level * 3 + 15, 327); // Deepwoken stat scaling
 
-  const getClassRecommendations = (className: string) => {
-    switch (className) {
-      case "Warrior":
-        return ["Strength", "Vitality", "Defense"];
-      case "Mage":
-        return ["Intelligence", "Vitality", "Magic Resist"];
-      case "Archer":
-        return ["Dexterity", "Strength", "Vitality"];
-      case "Assassin":
-        return ["Dexterity", "Intelligence", "Strength"];
-      case "Paladin":
-        return ["Strength", "Vitality", "Defense"];
-      case "Necromancer":
-        return ["Intelligence", "Magic Resist", "Vitality"];
+  const getAttunementRecommendations = (attunement: string) => {
+    switch (attunement) {
+      case "Flamecharm":
+        return ["Intelligence", "Willpower", "Fortitude"];
+      case "Frostdraw":
+        return ["Intelligence", "Willpower", "Fortitude"];
+      case "Thundercall":
+        return ["Intelligence", "Willpower", "Agility"];
+      case "Galebreathe":
+        return ["Intelligence", "Willpower", "Agility"];
+      case "Shadowcast":
+        return ["Intelligence", "Willpower", "Charisma"];
+      case "Ironsing":
+        return ["Intelligence", "Willpower", "Strength"];
+      case "Attunementless":
+        return ["Strength", "Fortitude", "Agility"];
       default:
         return [];
     }
@@ -203,7 +206,7 @@ export default function BuildEditor() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="character-class">Character Class</Label>
+                <Label htmlFor="attunement">Primary Attunement</Label>
                 <Select
                   value={build.class}
                   onValueChange={(value) =>
@@ -214,9 +217,9 @@ export default function BuildEditor() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {classes.map((cls) => (
-                      <SelectItem key={cls} value={cls}>
-                        {cls}
+                    {attunements.map((att) => (
+                      <SelectItem key={att} value={att}>
+                        {att}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -266,7 +269,7 @@ export default function BuildEditor() {
                   Recommended for {build.class}
                 </span>
                 <div className="flex flex-wrap gap-1">
-                  {getClassRecommendations(build.class).map((stat) => (
+                  {getAttunementRecommendations(build.class).map((stat) => (
                     <Badge key={stat} variant="outline" className="text-xs">
                       {stat}
                     </Badge>
@@ -294,7 +297,7 @@ export default function BuildEditor() {
                         <span className="text-sm text-muted-foreground">
                           {stat.value}
                         </span>
-                        {getClassRecommendations(build.class).includes(
+                        {getAttunementRecommendations(build.class).includes(
                           stat.name,
                         ) && (
                           <Badge
