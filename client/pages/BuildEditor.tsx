@@ -563,36 +563,25 @@ export default function BuildEditor() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {attunements.map((attunement) => (
-                    <div key={index} className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <Label className="font-medium">{stat.name}</Label>
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm text-muted-foreground">
-                            {stat.value}
-                          </span>
-                          {getAttunementRecommendations(
-                            getPrimaryAttunement(),
-                          ).includes(stat.name) && (
-                            <Badge
-                              variant="outline"
-                              className="text-xs text-gaming-success border-gaming-success"
-                            >
-                              Recommended
-                            </Badge>
-                          )}
-                        </div>
+                    <div key={attunement} className="space-y-2">
+                      <div className="flex justify-between">
+                        <span className="text-sm font-medium">
+                          {attunement}
+                        </span>
+                        <span className="text-sm text-muted-foreground">
+                          {build.attunements[attunement]}
+                        </span>
                       </div>
                       <Slider
-                        value={[stat.value]}
-                        onValueChange={([value]) => updateStat(index, value)}
-                        max={stat.max}
-                        min={1}
+                        value={[build.attunements[attunement]]}
+                        onValueChange={([value]) =>
+                          updateAttunement(attunement, value)
+                        }
+                        max={100}
+                        min={0}
                         step={1}
                         className="w-full"
                       />
-                      <p className="text-xs text-muted-foreground">
-                        {stat.description}
-                      </p>
                     </div>
                   ))}
                 </div>
