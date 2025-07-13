@@ -225,6 +225,56 @@ export default function BuildEditor() {
       </div>
 
       <div className="container mx-auto px-4 py-8">
+        {/* Import Section */}
+        <Card className="mb-8 border-gaming-cyan/20">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Clipboard className="w-5 h-5 text-gaming-cyan" />
+              Import from Deepwoken
+            </CardTitle>
+            <CardDescription>
+              Copy your character data from Deepwoken and paste it here to
+              automatically populate your build
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="import-data">Deepwoken Export Data</Label>
+                <Textarea
+                  id="import-data"
+                  value={importData}
+                  onChange={(e) => setImportData(e.target.value)}
+                  placeholder="Paste your exported data from Deepwoken here..."
+                  className="mt-1 min-h-[120px] font-mono text-sm"
+                />
+              </div>
+              <Button
+                onClick={() => parseDeepwokenData(importData)}
+                disabled={!importData.trim() || isProcessing}
+                className="bg-gaming-cyan hover:bg-gaming-cyan/90"
+              >
+                {isProcessing ? (
+                  <>
+                    <Download className="w-4 h-4 mr-2 animate-spin" />
+                    Processing...
+                  </>
+                ) : importSuccess ? (
+                  <>
+                    <Check className="w-4 h-4 mr-2" />
+                    Imported Successfully!
+                  </>
+                ) : (
+                  <>
+                    <Download className="w-4 h-4 mr-2" />
+                    Import Build Data
+                  </>
+                )}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Build Info */}
           <Card className="lg:col-span-1">
