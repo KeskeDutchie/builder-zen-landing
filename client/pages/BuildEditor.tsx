@@ -137,10 +137,31 @@ export default function BuildEditor() {
   const parseDeepwokenData = (data: string) => {
     // TODO: Implement actual parsing logic for Deepwoken export data
     console.log("Parsing Deepwoken data:", data);
-    // This would parse the copied data from Deepwoken and extract:
-    // - Stats, Power level, Attunement, Weapon type, Talents, Mantras
+
     setIsProcessing(true);
     setTimeout(() => {
+      // TODO: Replace with actual parsing logic
+      // For now, simulate importing some sample data
+      if (data.toLowerCase().includes("flame")) {
+        setCheckedTalents(["Bloodlust", "Fleet Footed", "Vital Point"]);
+        setCheckedMantras(["Flame Grab", "Fire Gun", "Rising Flame"]);
+        setBuild((prev) => ({
+          ...prev,
+          name: "Imported Flamecharm Build",
+          class: "Flamecharm",
+          power: 15,
+          talents: ["Bloodlust", "Fleet Footed", "Vital Point"],
+          mantras: ["Flame Grab", "Fire Gun", "Rising Flame"],
+        }));
+      }
+
+      // This would parse the copied data from Deepwoken and extract:
+      // - Stats, Power level, Attunement, Weapon type, Talents, Mantras
+      // const parsed = parseGameData(data);
+      // setBuild(prev => ({ ...prev, ...parsed }));
+      // setCheckedTalents(parsed.talents || []);
+      // setCheckedMantras(parsed.mantras || []);
+
       setIsProcessing(false);
       setImportSuccess(true);
       setTimeout(() => setImportSuccess(false), 2000);
