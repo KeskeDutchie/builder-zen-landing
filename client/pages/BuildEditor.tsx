@@ -492,6 +492,75 @@ export default function BuildEditor() {
           </Card>
         </div>
 
+        {/* Talents and Mantras */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          {/* Talents */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Sword className="w-5 h-5 text-gaming-gold" />
+                Talents
+              </CardTitle>
+              <CardDescription>
+                Check off the talents you have acquired ({checkedTalents.length}{" "}
+                selected)
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 gap-2 max-h-60 overflow-y-auto">
+                {sampleTalents.map((talent) => (
+                  <div key={talent} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={`talent-${talent}`}
+                      checked={checkedTalents.includes(talent)}
+                      onCheckedChange={() => toggleTalent(talent)}
+                    />
+                    <Label
+                      htmlFor={`talent-${talent}`}
+                      className="text-sm cursor-pointer"
+                    >
+                      {talent}
+                    </Label>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Mantras */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Zap className="w-5 h-5 text-gaming-purple" />
+                Mantras
+              </CardTitle>
+              <CardDescription>
+                Check off the mantras you have acquired ({checkedMantras.length}{" "}
+                selected)
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 gap-2 max-h-60 overflow-y-auto">
+                {sampleMantras.map((mantra) => (
+                  <div key={mantra} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={`mantra-${mantra}`}
+                      checked={checkedMantras.includes(mantra)}
+                      onCheckedChange={() => toggleMantra(mantra)}
+                    />
+                    <Label
+                      htmlFor={`mantra-${mantra}`}
+                      className="text-sm cursor-pointer"
+                    >
+                      {mantra}
+                    </Label>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Build Summary */}
         <Card className="mt-8">
           <CardHeader>
