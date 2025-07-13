@@ -209,8 +209,16 @@ export default function Index() {
               Import Target Build
             </CardTitle>
             <CardDescription>
-              Enter the build ID from the external website to import your target
-              build
+              Enter the build ID from{" "}
+              <a
+                href="https://deepwoken.co/builder"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gaming-purple hover:underline"
+              >
+                Deepwoken Builder
+              </a>{" "}
+              to import your target build
             </CardDescription>
           </CardHeader>
           <CardContent>
