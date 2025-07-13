@@ -457,28 +457,6 @@ export default function BuildEditor() {
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <Label className="text-sm font-medium">Weapon Investment</Label>
-                {Object.keys(build.weapons).map((weapon) => (
-                  <div key={weapon} className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-sm font-medium">{weapon}</span>
-                      <span className="text-sm text-muted-foreground">
-                        {build.weapons[weapon]}
-                      </span>
-                    </div>
-                    <Slider
-                      value={[build.weapons[weapon]]}
-                      onValueChange={([value]) => updateWeapon(weapon, value)}
-                      max={100}
-                      min={0}
-                      step={1}
-                      className="w-full"
-                    />
-                  </div>
-                ))}
-              </div>
-
               <div className="space-y-2">
                 <span className="text-sm font-medium">
                   Recommended for {getPrimaryAttunement()}
