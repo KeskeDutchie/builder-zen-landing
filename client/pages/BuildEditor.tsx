@@ -197,9 +197,9 @@ export default function BuildEditor() {
                 </Link>
               </Button>
               <div>
-                <h1 className="text-2xl font-bold">Build Editor</h1>
+                <h1 className="text-2xl font-bold">Import Current Build</h1>
                 <p className="text-muted-foreground">
-                  Configure your character build
+                  Import your current Deepwoken character data
                 </p>
               </div>
             </div>
