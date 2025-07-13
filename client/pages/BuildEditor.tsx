@@ -275,6 +275,27 @@ export default function BuildEditor() {
               </div>
 
               <div className="space-y-2">
+                <Label htmlFor="weapon-type">Primary Weapon</Label>
+                <Select
+                  value={build.weaponType}
+                  onValueChange={(value) =>
+                    setBuild({ ...build, weaponType: value })
+                  }
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {weaponTypes.map((weapon) => (
+                      <SelectItem key={weapon} value={weapon}>
+                        {weapon}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
                 <span className="text-sm font-medium">
                   Recommended for {build.class}
                 </span>
