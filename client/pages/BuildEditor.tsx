@@ -189,9 +189,9 @@ export default function BuildEditor() {
           {/* Build Info */}
           <Card className="lg:col-span-1">
             <CardHeader>
-              <CardTitle>Build Information</CardTitle>
+              <CardTitle>Character Information</CardTitle>
               <CardDescription>
-                Basic settings for your character build
+                Basic settings for your Deepwoken character
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -282,9 +282,9 @@ export default function BuildEditor() {
           {/* Stats Configuration */}
           <Card className="lg:col-span-2">
             <CardHeader>
-              <CardTitle>Attribute Distribution</CardTitle>
+              <CardTitle>Stat Investment</CardTitle>
               <CardDescription>
-                Allocate points to your character's attributes
+                Allocate investment points to your character's stats
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -331,7 +331,9 @@ export default function BuildEditor() {
         <Card className="mt-8">
           <CardHeader>
             <CardTitle>Build Summary</CardTitle>
-            <CardDescription>Overview of your configured build</CardDescription>
+            <CardDescription>
+              Overview of your Deepwoken character build
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -345,7 +347,9 @@ export default function BuildEditor() {
                 <div className="text-2xl font-bold text-gaming-purple">
                   {totalStatsUsed}
                 </div>
-                <div className="text-sm text-muted-foreground">Total Stats</div>
+                <div className="text-sm text-muted-foreground">
+                  Investment Points
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-gaming-gold">
@@ -360,7 +364,7 @@ export default function BuildEditor() {
                   {statPoints}
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  Points Remaining
+                  Knowledge Remaining
                 </div>
               </div>
             </div>
