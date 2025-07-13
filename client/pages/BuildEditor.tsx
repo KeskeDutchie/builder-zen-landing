@@ -502,14 +502,16 @@ export default function BuildEditor() {
 
               <div className="space-y-2">
                 <span className="text-sm font-medium">
-                  Recommended for {build.class}
+                  Recommended for {getPrimaryAttunement()}
                 </span>
                 <div className="flex flex-wrap gap-1">
-                  {getAttunementRecommendations(build.class).map((stat) => (
-                    <Badge key={stat} variant="outline" className="text-xs">
-                      {stat}
-                    </Badge>
-                  ))}
+                  {getAttunementRecommendations(getPrimaryAttunement()).map(
+                    (stat) => (
+                      <Badge key={stat} variant="outline" className="text-xs">
+                        {stat}
+                      </Badge>
+                    ),
+                  )}
                 </div>
               </div>
             </CardContent>
