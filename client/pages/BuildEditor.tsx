@@ -122,11 +122,11 @@ export default function BuildEditor() {
     setBuild({ ...build, stats: newStats });
   };
 
-  const updateLevel = (newLevel: number) => {
-    const levelDiff = newLevel - build.level;
-    const pointsFromLevel = levelDiff * 5; // 5 stat points per level
-    setStatPoints((prev) => prev + pointsFromLevel);
-    setBuild({ ...build, level: newLevel });
+  const updatePower = (newPower: number) => {
+    const powerDiff = newPower - build.power;
+    const pointsFromPower = powerDiff * 15; // 15 stat points per power level
+    setStatPoints((prev) => prev + pointsFromPower);
+    setBuild({ ...build, power: newPower });
   };
 
   const totalStatsUsed = build.stats.reduce((sum, stat) => sum + stat.value, 0);
