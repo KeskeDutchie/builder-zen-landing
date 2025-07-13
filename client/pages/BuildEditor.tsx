@@ -414,25 +414,30 @@ export default function BuildEditor() {
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="attunement">Primary Attunement</Label>
-                <Select
-                  value={build.class}
-                  onValueChange={(value) =>
-                    setBuild({ ...build, class: value })
-                  }
-                >
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {attunements.map((att) => (
-                      <SelectItem key={att} value={att}>
-                        {att}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+              <div className="space-y-4">
+                <Label className="text-sm font-medium">
+                  Attunement Investment
+                </Label>
+                {attunements.map((attunement) => (
+                  <div key={attunement} className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm font-medium">{attunement}</span>
+                      <span className="text-sm text-muted-foreground">
+                        {build.attunements[attunement]}
+                      </span>
+                    </div>
+                    <Slider
+                      value={[build.attunements[attunement]]}
+                      onValueChange={([value]) =>
+                        updateAttunement(attunement, value)
+                      }
+                      max={100}
+                      min={0}
+                      step={1}
+                      className="w-full"
+                    />
+                  </div>
+                ))}
               </div>
 
               <div className="space-y-2">
@@ -473,25 +478,26 @@ export default function BuildEditor() {
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="weapon-type">Primary Weapon</Label>
-                <Select
-                  value={build.weaponType}
-                  onValueChange={(value) =>
-                    setBuild({ ...build, weaponType: value })
-                  }
-                >
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {weaponTypes.map((weapon) => (
-                      <SelectItem key={weapon} value={weapon}>
-                        {weapon}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+              <div className="space-y-4">
+                <Label className="text-sm font-medium">Weapon Investment</Label>
+                {Object.keys(build.weapons).map((weapon) => (
+                  <div key={weapon} className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm font-medium">{weapon}</span>
+                      <span className="text-sm text-muted-foreground">
+                        {build.weapons[weapon]}
+                      </span>
+                    </div>
+                    <Slider
+                      value={[build.weapons[weapon]]}
+                      onValueChange={([value]) => updateWeapon(weapon, value)}
+                      max={100}
+                      min={0}
+                      step={1}
+                      className="w-full"
+                    />
+                  </div>
+                ))}
               </div>
 
               <div className="space-y-2">
