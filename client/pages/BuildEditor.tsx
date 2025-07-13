@@ -561,8 +561,8 @@ export default function BuildEditor() {
                   <Zap className="w-5 h-5 text-gaming-purple" />
                   Attunement Investment
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {build.stats.map((stat, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {attunements.map((attunement) => (
                     <div key={index} className="space-y-3">
                       <div className="flex justify-between items-center">
                         <Label className="font-medium">{stat.name}</Label>
