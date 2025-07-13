@@ -32,7 +32,7 @@ interface BuildStat {
 
 interface Build {
   name: string;
-  level: number;
+  power: number;
   class: string;
   stats: BuildStat[];
 }
@@ -40,7 +40,7 @@ interface Build {
 export default function Index() {
   const [currentBuild, setCurrentBuild] = useState<Build>({
     name: "My Current Build",
-    level: 42,
+    power: 15,
     class: "Flamecharm",
     stats: [
       { name: "Strength", current: 85, target: 100, max: 100 },
@@ -54,7 +54,7 @@ export default function Index() {
 
   const [targetBuild, setTargetBuild] = useState<Build>({
     name: "Optimal Flamecharm Build",
-    level: 20,
+    power: 20,
     class: "Flamecharm",
     stats: [
       { name: "Strength", current: 100, target: 100, max: 100 },
@@ -163,15 +163,15 @@ export default function Index() {
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-gaming-gold flex items-center">
                 <Zap className="w-4 h-4 mr-2" />
-                Level Gap
+                Power Gap
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
-                {targetBuild.level - currentBuild.level}
+                {targetBuild.power - currentBuild.power}
               </div>
               <p className="text-xs text-muted-foreground mt-1">
-                levels to target
+                power to target
               </p>
             </CardContent>
           </Card>
@@ -188,7 +188,7 @@ export default function Index() {
                     {currentBuild.name}
                     <Badge variant="secondary">{currentBuild.class}</Badge>
                   </CardTitle>
-                  <CardDescription>Level {currentBuild.level}</CardDescription>
+                  <CardDescription>Power {currentBuild.power}</CardDescription>
                 </div>
                 <Button variant="ghost" size="sm" asChild>
                   <Link to="/build-editor">
@@ -241,7 +241,7 @@ export default function Index() {
                     {targetBuild.name}
                     <Badge variant="secondary">{targetBuild.class}</Badge>
                   </CardTitle>
-                  <CardDescription>Level {targetBuild.level}</CardDescription>
+                  <CardDescription>Power {targetBuild.power}</CardDescription>
                 </div>
                 <Button variant="ghost" size="sm" asChild>
                   <Link to="/build-editor">
