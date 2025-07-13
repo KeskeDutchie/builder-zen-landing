@@ -130,7 +130,7 @@ export default function BuildEditor() {
   };
 
   const totalStatsUsed = build.stats.reduce((sum, stat) => sum + stat.value, 0);
-  const maxPossibleStats = Math.min(build.level * 3 + 15, 327); // Deepwoken stat scaling
+  const maxPossibleStats = Math.min(build.power * 15 + 87, 327); // Deepwoken stat scaling with Power
 
   const getAttunementRecommendations = (attunement: string) => {
     switch (attunement) {
