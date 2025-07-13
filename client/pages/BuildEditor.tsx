@@ -477,9 +477,9 @@ export default function BuildEditor() {
           {/* Stats Configuration */}
           <Card className="lg:col-span-2">
             <CardHeader>
-              <CardTitle>Stat Investment</CardTitle>
+              <CardTitle>Character Investment</CardTitle>
               <CardDescription>
-                Allocate investment points to your character's stats
+                Allocate investment points to stats, attunements, and weapons
               </CardDescription>
             </CardHeader>
             <CardContent>
