@@ -43,9 +43,9 @@ interface BuildStat {
 interface Build {
   name: string;
   power: number;
-  class: string;
+  attunements: Record<string, number>;
+  weapons: Record<string, number>;
   stats: BuildStat[];
-  weaponType?: string;
   talents?: string[];
   mantras?: string[];
 }
