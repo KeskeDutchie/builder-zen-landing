@@ -533,9 +533,9 @@ export default function BuildEditor() {
                         <span className="text-sm text-muted-foreground">
                           {stat.value}
                         </span>
-                        {getAttunementRecommendations(build.class).includes(
-                          stat.name,
-                        ) && (
+                        {getAttunementRecommendations(
+                          getPrimaryAttunement(),
+                        ).includes(stat.name) && (
                           <Badge
                             variant="outline"
                             className="text-xs text-gaming-success border-gaming-success"
