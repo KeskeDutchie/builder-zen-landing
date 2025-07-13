@@ -118,6 +118,22 @@ export default function BuildEditor() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [importSuccess, setImportSuccess] = useState(false);
 
+  const toggleTalent = (talent: string) => {
+    setCheckedTalents((prev) =>
+      prev.includes(talent)
+        ? prev.filter((t) => t !== talent)
+        : [...prev, talent],
+    );
+  };
+
+  const toggleMantra = (mantra: string) => {
+    setCheckedMantras((prev) =>
+      prev.includes(mantra)
+        ? prev.filter((m) => m !== mantra)
+        : [...prev, mantra],
+    );
+  };
+
   const parseDeepwokenData = (data: string) => {
     // TODO: Implement actual parsing logic for Deepwoken export data
     console.log("Parsing Deepwoken data:", data);
