@@ -256,7 +256,7 @@ export default function BuildEditor() {
   };
 
   const totalStatsUsed = build.stats.reduce((sum, stat) => sum + stat.value, 0);
-  const maxPossibleStats = Math.min(build.power * 15 + 87, 327); // Deepwoken stat scaling with Power
+  const maxPossibleStats = build.power * 15; // 15 stat points per power level in Deepwoken
 
   const getAttunementRecommendations = (attunement: string) => {
     switch (attunement) {
