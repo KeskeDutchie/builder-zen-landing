@@ -54,7 +54,7 @@ export default function Index() {
 
   const [targetBuild, setTargetBuild] = useState<Build>({
     name: "Optimal Flamecharm Build",
-    level: 60,
+    level: 20,
     class: "Flamecharm",
     stats: [
       { name: "Strength", current: 100, target: 100, max: 100 },
