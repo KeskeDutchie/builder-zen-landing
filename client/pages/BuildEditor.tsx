@@ -484,11 +484,11 @@ export default function BuildEditor() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {/* Attunement Investment */}
+              {/* Stats Investment */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-gaming-purple" />
-                  Attunement Investment
+                  <Target className="w-5 h-5 text-gaming-cyan" />
+                  Stats Investment
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {attunements.map((attunement) => (
