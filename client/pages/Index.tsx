@@ -132,8 +132,8 @@ export default function Index() {
                 asChild
               >
                 <Link to="/build-editor">
-                  <Plus className="w-4 h-4 mr-2" />
-                  New Build
+                  <Download className="w-4 h-4 mr-2" />
+                  Import Current Build
                 </Link>
               </Button>
             </div>
