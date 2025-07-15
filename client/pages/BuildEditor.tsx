@@ -515,7 +515,7 @@ export default function BuildEditor() {
                         value={[stat.value]}
                         onValueChange={([value]) => updateStat(index, value)}
                         max={stat.max}
-                        min={1}
+                        min={0}
                         step={1}
                         className="w-full"
                       />
