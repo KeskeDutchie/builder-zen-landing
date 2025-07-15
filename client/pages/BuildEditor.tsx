@@ -528,7 +528,7 @@ export default function BuildEditor() {
                       <Slider
                         value={[stat.value]}
                         onValueChange={([value]) => updateStat(index, value)}
-                        max={stat.max}
+                        max={getStatMaxValue(stat.value)}
                         min={0}
                         step={1}
                         className="w-full"
