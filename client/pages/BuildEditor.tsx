@@ -559,7 +559,7 @@ export default function BuildEditor() {
                       <Slider
                         value={[build.weapons[weapon]]}
                         onValueChange={([value]) => updateWeapon(weapon, value)}
-                        max={100}
+                        max={getWeaponMaxValue(build.weapons[weapon])}
                         min={0}
                         step={1}
                         className="w-full"
