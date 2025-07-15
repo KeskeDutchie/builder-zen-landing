@@ -591,7 +591,9 @@ export default function BuildEditor() {
                         onValueChange={([value]) =>
                           updateAttunement(attunement, value)
                         }
-                        max={100}
+                        max={getAttunementMaxValue(
+                          build.attunements[attunement],
+                        )}
                         min={0}
                         step={1}
                         className="w-full"
