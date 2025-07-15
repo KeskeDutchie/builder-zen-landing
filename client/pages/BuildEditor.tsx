@@ -257,6 +257,20 @@ export default function BuildEditor() {
 
   const totalStatsUsed = build.stats.reduce((sum, stat) => sum + stat.value, 0);
   const maxPossibleStats = 30 + build.power * 15; // 30 base stats + 15 per power level in Deepwoken
+  const remainingStatPoints = maxPossibleStats - totalStatsUsed;
+
+  // Calculate dynamic max values for sliders
+  const getStatMaxValue = (currentValue: number) => {
+    return Math.min(100, currentValue + remainingStatPoints);
+  };
+
+  const getAttunementMaxValue = (currentValue: number) => {
+    return Math.min(100, currentValue + remainingStatPoints);
+  };
+
+  const getWeaponMaxValue = (currentValue: number) => {
+    return Math.min(100, currentValue + remainingStatPoints);
+  };
 
   const getAttunementRecommendations = (attunement: string) => {
     switch (attunement) {
