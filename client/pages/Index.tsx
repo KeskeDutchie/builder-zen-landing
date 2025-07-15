@@ -143,7 +143,7 @@ export default function Index() {
 
       <div className="container mx-auto px-4 py-8">
         {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="mb-8">
           <Card className="border-gaming-cyan/20">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-gaming-cyan flex items-center">
@@ -159,44 +159,6 @@ export default function Index() {
                 value={getOverallProgress(currentBuild.stats)}
                 className="mt-2"
               />
-            </CardContent>
-          </Card>
-
-          <Card className="border-gaming-purple/20">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-gaming-purple flex items-center">
-                <TrendingUp className="w-4 h-4 mr-2" />
-                Stats to Improve
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">
-                {
-                  currentBuild.stats.filter(
-                    (stat) => stat.current < stat.target,
-                  ).length
-                }
-              </div>
-              <p className="text-xs text-muted-foreground mt-1">
-                attributes need work
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-gaming-gold/20">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-gaming-gold flex items-center">
-                <Zap className="w-4 h-4 mr-2" />
-                Power Gap
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">
-                {targetBuild.power - currentBuild.power}
-              </div>
-              <p className="text-xs text-muted-foreground mt-1">
-                power to target
-              </p>
             </CardContent>
           </Card>
         </div>
