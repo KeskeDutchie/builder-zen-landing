@@ -20,13 +20,6 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": [
-    "client",
-    "server",
-    "shared"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["client", "server", "shared"],
+  "exclude": ["node_modules", "dist"]
 }

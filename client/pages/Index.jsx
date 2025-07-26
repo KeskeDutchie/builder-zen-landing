@@ -33,16 +33,16 @@ export default function Index() {
 
   const handleImportBuild = async () => {
     if (!buildId.trim()) return;
-    
+
     setIsImporting(true);
     try {
       // TODO: Replace with actual API call to external website
-      console.log('Importing build with ID:', buildId);
+      console.log("Importing build with ID:", buildId);
       // const response = await fetch(`/api/external-build/${buildId}`);
       // const buildData = await response.json();
       // setTargetBuild(buildData);
     } catch (error) {
-      console.error('Failed to import build:', error);
+      console.error("Failed to import build:", error);
     } finally {
       setIsImporting(false);
     }
@@ -204,7 +204,9 @@ export default function Index() {
                 <div>
                   <CardTitle className="flex items-center gap-2">
                     {currentBuild.name}
-                    <Badge variant="secondary">{currentBuild.primaryAttunement}</Badge>
+                    <Badge variant="secondary">
+                      {currentBuild.primaryAttunement}
+                    </Badge>
                   </CardTitle>
                   <CardDescription>Power {currentBuild.power}</CardDescription>
                 </div>
@@ -257,12 +259,17 @@ export default function Index() {
                 <div>
                   <CardTitle className="flex items-center gap-2">
                     {targetBuild.name}
-                    <Badge variant="secondary">{targetBuild.primaryAttunement}</Badge>
+                    <Badge variant="secondary">
+                      {targetBuild.primaryAttunement}
+                    </Badge>
                   </CardTitle>
                   <CardDescription>Power {targetBuild.power}</CardDescription>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Badge variant="outline" className="text-xs text-gaming-purple border-gaming-purple">
+                  <Badge
+                    variant="outline"
+                    className="text-xs text-gaming-purple border-gaming-purple"
+                  >
                     <ExternalLink className="w-3 h-3 mr-1" />
                     Imported
                   </Badge>
@@ -314,7 +321,9 @@ export default function Index() {
                 <ul className="space-y-1 text-muted-foreground">
                   <li>• Max Intelligence for spell damage (+30 needed)</li>
                   <li>• Increase Fortitude for health (+30 needed)</li>
-                  <li>• Boost Willpower for ether and spell scaling (+25 needed)</li>
+                  <li>
+                    • Boost Willpower for ether and spell scaling (+25 needed)
+                  </li>
                 </ul>
               </div>
               <div>

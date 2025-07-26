@@ -355,7 +355,8 @@ export default function BuildEditor() {
               Import from Deepwoken
             </CardTitle>
             <CardDescription>
-              Copy your character data from Deepwoken and paste it here to automatically populate your build
+              Copy your character data from Deepwoken and paste it here to
+              automatically populate your build
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -573,7 +574,9 @@ export default function BuildEditor() {
                         onValueChange={([value]) =>
                           updateAttunement(attunement, value)
                         }
-                        max={getAttunementMaxValue(build.attunements[attunement])}
+                        max={getAttunementMaxValue(
+                          build.attunements[attunement],
+                        )}
                         min={0}
                         step={1}
                         className="w-full"
@@ -659,7 +662,9 @@ export default function BuildEditor() {
         <Card className="mt-8">
           <CardHeader>
             <CardTitle>Build Summary</CardTitle>
-            <CardDescription>Overview of your Deepwoken character build</CardDescription>
+            <CardDescription>
+              Overview of your Deepwoken character build
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -673,7 +678,9 @@ export default function BuildEditor() {
                 <div className="text-2xl font-bold text-gaming-purple">
                   {totalStatsUsed}
                 </div>
-                <div className="text-sm text-muted-foreground">Investment Points</div>
+                <div className="text-sm text-muted-foreground">
+                  Investment Points
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-gaming-gold">
